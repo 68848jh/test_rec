@@ -6,7 +6,7 @@ import matplotlib.pyplot
 
 
 data = np.loadtxt(
-    "D:\\pycharm\\pythonProject3\\data\\data.csv",
+    "D:\\pycharm\\test_rec\\data\\data.csv",
     dtype=float,
     skiprows=1,
     usecols=(0,1),
@@ -28,9 +28,9 @@ def cost(p,x,y):
     tatal_cost = 0
     data_num = len(data)
     for i in range(data_num):
-        y_yeal = y[i]
-        _x = x[i]
-        _y = func(p,_x)
+        y_yeal = y[i] #真实值
+        _x = x[i]   #样品值
+        _y = func(p,_x)#样品计算过的值
         tatal_cost += (_y - y_yeal) ** 2
     return  tatal_cost / data_num
 
